@@ -1,0 +1,34 @@
+#Registration
+FirstName = id = "firstName"
+LastName = id = "lastName"
+Email = //input[@id='userEmail']
+Gender = //input[@value="Female"]
+Mobile = //input[@id='userNumber']
+birthDate = //input[@id='dateOfBirthInput']
+
+#login-form
+inputUserName = //input[@id='userName']
+inputPassword = //input[@id='password']
+buttonLogin = //button[@id='login']
+Login.element.errorMessage = //p[@id="name" and text()='Invalid username or password!']
+//li[@class='btn btn-light ' and @id="item-0"]/span[text()='Login'] (Book Store Application -> Login)
+
+#Book Store
+//li[@class='btn btn-light active' and @id="item-2"]/span[text()='Book Store'] (Book Store Application -> Book Store)
+inputSearchBox = //input[@id='searchBox']
+buttonSearch = //div[@class='input-group-append']
+tableBookList = //div[@class="ReactTable -striped -highlight"]//div[@class="rt-tbody"]
+linkBook1Title = //a[text() = 'Git Pocket Guide']
+linkBook2Title = //a[text()='Learning JavaScript Design Patterns']
+
+#Book Details
+labelISBN = //div[@id='ISBN-wrapper']//label[@class='form-label' and @id='userName-value']
+labelTitle = //div[@id='title-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelSubTitle = //div[@id='subtitle-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelAuthor = //div[@id='author-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelPublisher = //div[@id='publisher-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelTotalPages = //div[@id='pages-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelDescription = //div[@id='description-wrapper']//label[@class="form-label" and @id="userName-value"]
+labelWebsite = //div[@id='website-wrapper']//label[@class="form-label" and @id="userName-value"]
+buttonBackToBookStore = //button[@id='addNewRecordButton' and text()='Back To Book Store']
+buttonAddToCollection = //button[@id='addNewRecordButton' and text()='Add To Your Collection']
