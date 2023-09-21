@@ -1,35 +1,37 @@
-TC 01 Check Student Registration
+TC 01 Check Student Registration +
 
 Preconditions:
 1. Launch a browser and open the cite https://demoqa.com/automation-practice-form
-2. Click on the "Widgets" on the left panel to show entire registration form on the screen (for manual pass)
+2. Click on the "Elements" on the left panel to show entire registrationTest form on the screen (for manual pass)
 
 Valid data:
     - name: min 1 character (e.g. Iryna). Mandatory field
     - last name: min 1 character (e.g. G7). Mandatory field
     - email: valid email address e.g. you@example.com (irynag7@mailinator.com)
     - Gender: male, female, other. Mandatory field
-    - Mobile: 10 Digits (e.g. 0931263846). Mobile number must be unique. Mandatory field
+    - Mobile: 10 Digits (e.g. 0931253845). Mobile number must be unique. Mandatory field
     - Date of Birth: dd/month/yyyy (e.g. 24 august 1988)
 
 STR:
 1. Click on the "name" text field and enter valid data
 2. Click on the "last name" text fields and enter valid data
 3. Click on the "email" text field and enter valid data
-4. Click on the "Female" radio button
-5. Click on the "Mobile" text field and enter valid data
-6. Click on the "Date of Birth" text field, clear it and enter valid data
+4. Click on the "Mobile" text field and enter valid data
+5. Click on the "Date of Birth" text field, clear it and enter valid data
+6. Click on the "Female" radio button
 7. Click on the submit button
 
 ER:
 Modal window with entered data and "Close" button opened
 
+Post-conditions
+Close modal window
 
-TC 02 Check Login in Book Store
+
+TC 02 Check Login in Book Store +
 
 Preconditions:
 1. Launch a browser and open the cite https://demoqa.com/login
-2. Click on the "Book Store Application" -> "Login" on the left panel
 
 Valid data:
 - registered in the system user ( Login: IrynaG7, password: sPo0kyH@ll0w3En)
@@ -41,25 +43,49 @@ STR:
 
 ER:
 1. The "Profile" page is opened (https://demoqa.com/profile)
-2. Book search text input and "Search" button are shown?????
-3. The UserName is shown correctly
-4. The "Delete Account" button is shown
-5. The "Log out" button is shown
-6. The "Go To Book Store" button is shown
-7. The "Delete all books" button is shown
-8. The "LogIn" form is not shown
+2. The page header is "Profile"
+3. The "Profile" item is displayed in the left side menu list as active
+4. Book search text input and "Search" button are shown?????
+5. The UserName is shown correctly
+6. The "Delete Account" button is shown
+7. The "Log out" button is shown
+8. The "Go To Book Store" button is shown
+9. The "Delete all books" button is shown
+10. The "LogIn" form is not shown
 
-TC 03 Check the book details page
+Post-conditions:
+Log out
+
+
+TC 03 Checking the redirect to the "Book Store" page from the "Profile" page +
+
+Preconditions:
+1. An existing user is logged in to the system (TC 02. Login: IrynaG7, password: sPo0kyH@ll0w3En)
+2. The "Profile" page is opened (https://demoqa.com/profile)
+
+STR:
+1. Click on the "Go to Book Store" button
+
+ER:
+1. The "Book Store" page is opened (https://demoqa.com/books)
+2. The page header is "Book Store"
+3. The "Book Store" item is displayed in the left side menu list as active
+4. The "Book Store" page contains the "list of the books" table
+5. The "Log out" button is displayed on the page
+6. Book search text input and "Search" button are shown
+7. The User Name of logged in user is displayed on the page
+
+TC 04 Check the book details page +
 Valid data:
 - registered in the system user ( Login: IrynaG7, password: sPo0kyH@ll0w3En)
 
 Preconditions:
 1. Launch a browser and open the cite https://demoqa.com/login
 2. Login into the system as a registered user (TC 02)
+3. Go to the Book Store page
 
 STR:
-1. Click on the "Book Store Application" -> "Book Store" on the left panel
-2. Click on the title of the book from the list of books to open the details of the selected book
+1. Click on the title of the book from the list of books to open the details of the selected book
 
 ER:
 1. Next details of selected book is shown:
@@ -75,7 +101,7 @@ ER:
 3. "Add To Your Collection" button is shown
 4. List of all books is not shown
 
-TC 04 Check an option of book adding to the collection from the Book Store page
+TC 05 Check an option of book adding to the user's collection from the Book Store details page +
 
 Valid data:
 - registered in the system user ( Login: IrynaG7, password: sPo0kyH@ll0w3En)
@@ -83,19 +109,24 @@ Valid data:
 Preconditions:
 1. Launch a browser and open the cite https://demoqa.com/login
 2. Login into the system as a registered user (TC 02)
-3. Open book details page (TC 03)
+3. Delete all books from the user's collection
+4. Go to the Book Store page
+5. Open book details page (TC 03)
 
 STR:
 1. Click on the "Add To Your Collection" button
 
 ER:
-1. The system shows the "Book added to your collection." message with OK button
-2. The book is shown in the list of books on the "Profile" page
-3. The "Delete" button is shown for the added book
-4. if book is already added to the collection - show message "Book already present in the your collection."
+1. The system shows the "Book added to your collection." alert with OK button
+2. The alert window is closed after clicking on the "OK" button
+3. The book is shown in the list of books on the "Profile" page
+4. The "Delete" button is shown for the added book on user's profile page
+
+Post-conditions:
+Delete the book from the user's collection (TC 06)
 
 
-TC 05 Check the book deleting from the collection
+TC 06 Check the book deleting from the user collection
 
 Valid data:
 - registered in the system user ( Login: IrynaG7, password: sPo0kyH@ll0w3En)
@@ -103,12 +134,13 @@ Valid data:
 Preconditions:
 1. Launch a browser and open the cite https://demoqa.com/login
 2. Login into the system as a registered user (TC 02)
-3. Have at least 1 book added to collection (TC 04)
+3. Add 1 book to collection (TC 04)
 
 STR:
 1. On the "Profile" page click on the "Delete" button in the "Action" column for the selected book
 2. Click on the "Ok" button in the opened modal window
 3. Click on the "OK" button in the "Book deleted" alert window
+4. Click on the "OK" button in the system pop-up window
 
 ER:
-1.
+1. The book is not shown in the list of books on the "Profile" page

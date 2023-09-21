@@ -1,25 +1,34 @@
 #Registration
-FirstName = id = "firstName"
-LastName = id = "lastName"
-Email = //input[@id='userEmail']
-Gender = //input[@value="Female"]
-Mobile = //input[@id='userNumber']
+firstName = id = "firstName"
+lastName = id = "lastName"
+email = //input[@id='userEmail']
+gender = //input[@value="Female"]
+mobile = //input[@id='userNumber']
 birthDate = //input[@id='dateOfBirthInput']
+buttonSubmit = id="submit"
+formThanks //div[@class="modal-content"]
+//li[@class='btn btn-light active' and @id="item-0"]/span[text()='Practice Form'] (Forms -> Practice Form)
+//div[@class='header-text' and text()='Elements'] (Elements item in the left menu)
+URL = "https://demoqa.com/automation-practice-form"
 
-#login-form
+#login
+header = //div[@class='pattern-backgound playgound-header']
 inputUserName = //input[@id='userName']
 inputPassword = //input[@id='password']
 buttonLogin = //button[@id='login']
-Login.element.errorMessage = //p[@id="name" and text()='Invalid username or password!']
+errorMessage = //p[@id="name" and text()='Invalid username or password!']
 //li[@class='btn btn-light ' and @id="item-0"]/span[text()='Login'] (Book Store Application -> Login)
+URL = "https://demoqa.com/login"
 
 #Book Store
 //li[@class='btn btn-light active' and @id="item-2"]/span[text()='Book Store'] (Book Store Application -> Book Store)
+header = //div[@class='pattern-backgound playgound-header']
 inputSearchBox = //input[@id='searchBox']
 buttonSearch = //div[@class='input-group-append']
 tableBookList = //div[@class="ReactTable -striped -highlight"]//div[@class="rt-tbody"]
 linkBook1Title = //a[text() = 'Git Pocket Guide']
 linkBook2Title = //a[text()='Learning JavaScript Design Patterns']
+URL = "https://demoqa.com/books"
 
 #Book Details
 labelISBN = //div[@id='ISBN-wrapper']//label[@class='form-label' and @id='userName-value']
@@ -32,3 +41,19 @@ labelDescription = //div[@id='description-wrapper']//label[@class="form-label" a
 labelWebsite = //div[@id='website-wrapper']//label[@class="form-label" and @id="userName-value"]
 buttonBackToBookStore = //button[@id='addNewRecordButton' and text()='Back To Book Store']
 buttonAddToCollection = //button[@id='addNewRecordButton' and text()='Add To Your Collection']
+
+#Profile
+
+Profile.header = //div[@class="pattern-backgound playgound-header"]
+Profile.label.userName = //label[@id='userName-value']
+Profile.button.Logout = //button[@id='submit' and text()='Log out']
+Profile.element.Profile = //li[@class='btn btn-light active' and @id="item-3"]
+Profile.input.searchBox = //div[@class='mb-3 input-group']//input[@id='searchBox']
+Profile.button.Search = //div[@class='mb-3 input-group']//div[@class='input-group-append']
+Profile.table.bookList = //div[@class='profile-wrapper']//div[@class='ReactTable -striped -highlight']
+Profile.button.GoToBookStore = //button[@id='gotoStore']
+Profile.button.DeleteAccount = //button[@id='submit' and text()='Delete Account']
+Profile.button.DeleteAllBooks = //div[@class='text-right button di']//button[@id='submit' and text()='Delete All Books']
+
+//li[@class='btn btn-light active' and @id="item-3"]/span[text()='Profile'] (Book Store Application -> Profile)
+URL = "https://demoqa.com/profile"
